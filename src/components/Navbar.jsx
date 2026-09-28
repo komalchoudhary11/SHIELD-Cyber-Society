@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Shield, Menu, X, ChevronRight, Lock } from 'lucide-react';
+import { Menu, X, ChevronRight, Lock } from 'lucide-react';
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
@@ -50,9 +50,9 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo Lockup */}
-          <Link to="/" className="flex items-center gap-3.5 group">
-            <div className="w-11 h-11 rounded-lg bg-navy-800 text-white flex items-center justify-center border-2 border-shield-gold shadow-sm group-hover:border-accent-blue transition-colors">
-              <Shield className="w-6 h-6 text-shield-gold" />
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-11 h-11 rounded-lg bg-navy-900 border border-shield-gold/40 flex items-center justify-center overflow-hidden p-0.5 shadow-sm group-hover:border-accent-blue transition-colors">
+              <img src="/shield-logo.png" alt="SHIELD Cyber Society Logo" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
@@ -96,12 +96,12 @@ export default function Navbar() {
               </NavLink>
             ))}
 
-            {/* "Join Us" button styled as filled navy pill on the right */}
+            {/* Workshop registration button styled as a filled navy pill on the right */}
             <Link
               to="/join"
               className="ml-3 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-navy-800 hover:bg-navy-900 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
             >
-              <span>Join Us</span>
+              <span>Register for Workshop</span>
               <ChevronRight className="w-3.5 h-3.5 text-shield-gold" />
             </Link>
           </nav>
@@ -110,9 +110,9 @@ export default function Navbar() {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               to="/join"
-              className="px-3.5 py-1.5 rounded-full bg-navy-800 text-white text-xs font-bold uppercase tracking-wider"
+              className="hidden sm:inline-flex px-3.5 py-1.5 rounded-full bg-navy-800 text-white text-xs font-bold uppercase tracking-wider"
             >
-              Join
+              Register for Workshop
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -149,7 +149,7 @@ export default function Navbar() {
               to="/join"
               className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-navy-800 text-white font-bold text-sm tracking-wide text-center"
             >
-              <span>Join SHIELD Society</span>
+              <span>Register for Workshop</span>
               <ChevronRight className="w-4 h-4 text-shield-gold" />
             </Link>
           </div>
